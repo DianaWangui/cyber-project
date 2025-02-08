@@ -59,5 +59,5 @@ The API is built using Next.js API routes.
 
 ---
 ## 📌 Contact
-For any inquiries, reach out to **Diana Wangui** via [LinkedIn](https://www.linkedin.com/in/diana-wangui-8967a0253/dd R) or email at **dianawanguikt048@gmail.com**.
+For any inquiries, reach out to **Diana Wangui** via [LinkedIn](https://www.linkedin.com/in/diana-wangui-8967a0253/dd) or email at **dianawanguikt048@gmail.com**.
 
