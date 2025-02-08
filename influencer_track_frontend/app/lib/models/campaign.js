@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
-import { Schema } from 'mongoose';
 
-const campaigns = new Schema({
+const campaignSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String },
   startDate: { type: Date, default: Date.now },
@@ -11,8 +10,9 @@ const campaigns = new Schema({
   updatedAt: { type: Date, default: Date.now },
   companyName: { type: String, required: true },
   location: { type: String },
+  influencers:{ type: Array }
 });
 
-const Campaign = mongoose.model('Campaign', campaigns)
+const Campaign = mongoose.models.Campaign || mongoose.model('Campaign', campaignSchema);
 
 export default Campaign;
