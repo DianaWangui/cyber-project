@@ -23,7 +23,7 @@ This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB
 ### 1️⃣ Clone the Repository
 ```sh
 git clone https://github.com/yourusername/nextjs-campaign-dashboard.git
-cd nextjs-campaign-dashboard
+cd influencer_track_frontend
 ```
 
 ### 2️⃣ Install Dependencies
@@ -56,17 +56,6 @@ The API is built using Next.js API routes.
 | POST   | `/api/campaigns`    | Create a new campaign      |
 | GET    | `/api/campaigns/:id` | Get a single campaign      |
 
-
----
-
----
-
-## 📌 Deployment
-To deploy the application on **Vercel**, run:
-```sh
-vercel
-```
-Ensure you have set the environment variables in **Vercel Settings**.
 
 ---
 
