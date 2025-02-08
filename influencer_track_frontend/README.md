@@ -1,7 +1,7 @@
 # Next.js Campaign Management Dashboard
 
 ##  Project Overview
-This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB (Mongoose)**. The dashboard allows users to manage campaigns, view campaign details, and interact with the system in a responsive and dynamic UI.
+This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB (Mongoose)**. The dashboard allows users to view all available campaigns, view campaign more details, view their campaings if they have one and interact with the system in a responsive and dynamic UI.
 
 ## 🚀 Features
 - CRUD Operations for Campaigns
@@ -23,7 +23,7 @@ This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB
 ### 1️⃣ Clone the Repository
 ```sh
 git clone https://github.com/yourusername/nextjs-campaign-dashboard.git
-cd nextjs-campaign-dashboard
+cd influencer_track_frontend
 ```
 
 ### 2️⃣ Install Dependencies
@@ -54,22 +54,10 @@ The API is built using Next.js API routes.
 |--------|---------------------|-----------------------------|
 | GET    | `/api/campaigns`    | Fetch all campaigns        |
 | POST   | `/api/campaigns`    | Create a new campaign      |
-| GET    | `/api/campaigns/:id` | Get a single campaign      |
+| GET    | `/api/my-campaigns/` | Get single user campaigs     |
 
 
 ---
-
----
-
-## 📌 Deployment
-To deploy the application on **Vercel**, run:
-```sh
-vercel
-```
-Ensure you have set the environment variables in **Vercel Settings**.
-
----
-
 ## 📌 Contact
 For any inquiries, reach out to **Diana Wangui** via [LinkedIn](https://www.linkedin.com/in/diana-wangui-8967a0253/dd R) or email at **dianawanguikt048@gmail.com**.
 
