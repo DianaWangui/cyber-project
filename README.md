@@ -1,7 +1,7 @@
 # Next.js Campaign Management Dashboard
 
 ##  Project Overview
-This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB (Mongoose)**. The dashboard allows users to manage campaigns, view campaign details, and interact with the system in a responsive and dynamic UI.
+This is a **Campaign Management Dashboard** built with **Next.js** and **MongoDB (Mongoose)**. The dashboard allows users to view all available campaigns, view campaign more details, view their campaings if they have one and interact with the system in a responsive and dynamic UI.
 
 ## 🚀 Features
 - CRUD Operations for Campaigns
@@ -54,11 +54,10 @@ The API is built using Next.js API routes.
 |--------|---------------------|-----------------------------|
 | GET    | `/api/campaigns`    | Fetch all campaigns        |
 | POST   | `/api/campaigns`    | Create a new campaign      |
-| GET    | `/api/campaigns/:id` | Get a single campaign      |
+| GET    | `/api/my-campaigns/` | Get single user campaigs     |
 
 
 ---
-
 ## 📌 Contact
 For any inquiries, reach out to **Diana Wangui** via [LinkedIn](https://www.linkedin.com/in/diana-wangui-8967a0253/dd R) or email at **dianawanguikt048@gmail.com**.
 
