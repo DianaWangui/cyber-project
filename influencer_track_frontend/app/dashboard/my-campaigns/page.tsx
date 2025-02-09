@@ -53,12 +53,12 @@ export default function CampaignsPage() {
         </aside>
 
         <main className="flex-1 p-5 bg-gray-100">
-          <h1 className="text-2xl font-bold mb-4">My Campaigns</h1>
+          <h1 className="text-2xl font-bold mb-4 text-color-gray-700">My Campaigns</h1>
 
           {loading ? (
-            <p>Loading campaigns...</p>
+            <p className="text-gray-600">Loading campaigns...</p>
           ) : campaigns.length === 0 ? (
-            <p>No campaigns found.</p>
+            <p className="text-gray-600">No campaigns found.</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
               {campaigns.map((campaign) => (
