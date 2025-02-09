@@ -18,6 +18,7 @@ export default function CampaignsPage() {
         setCampaigns(data);
       } catch (error) {
         console.error("Error fetching campaigns:", error);
+        console.log("Error fetching campaigns:", error.response.data);
       } finally {
         setLoading(false);
       }
