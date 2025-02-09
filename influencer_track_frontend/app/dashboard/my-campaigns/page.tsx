@@ -53,7 +53,7 @@ export default function CampaignsPage() {
         </aside>
 
         <main className="flex-1 p-5 bg-gray-100">
-          <h1 className="text-2xl font-bold mb-4 text-color-gray-700">My Campaigns</h1>
+          <h1 className="text-2xl font-bold mb-4 text-gray-700">My Campaigns</h1>
 
           {loading ? (
             <p className="text-gray-600">Loading campaigns...</p>
