@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { NextResponse } from 'next/server';
 mongoose.set('debug', true);
 
+
 // will put this on .env
 const uri = "mongodb+srv://Dee:Dee2025@cluster0.aagmx.mongodb.net/influencerDB?retryWrites=true&w=majority&appName=Cluster0"
 
@@ -14,7 +15,7 @@ const formDataSchema = new mongoose.Schema({
 
 const FormData = mongoose.models.FormData || mongoose.model('FormData', formDataSchema);
 
-export async function POST(req) {
+export async function POST(req: Request) {
   try {
     await mongoose.connect(uri);
 

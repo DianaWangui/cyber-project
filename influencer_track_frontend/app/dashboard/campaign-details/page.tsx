@@ -45,7 +45,7 @@ const CampaignDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000//api/campaign-application', formData, {
+      await axios.post('http://localhost:3000//api/campaign-application', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
