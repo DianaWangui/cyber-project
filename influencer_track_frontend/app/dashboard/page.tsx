@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/campaigns");
+        const response = await axios.get("https://cyber-project-ten.vercel.app/api/campaigns");
         console.log("Fetched campaigns:", response.data);
         setCampaigns(response.data);
       } catch (error) {
