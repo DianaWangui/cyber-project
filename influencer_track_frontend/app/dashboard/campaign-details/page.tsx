@@ -109,72 +109,72 @@ const CampaignDetails = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3 sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h2 className="text-xl font-semibold mb-4 text-gray-500">Submit Your Details</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-gray-700">First Name</label>
-                <input 
-                  type="text" 
-                  name="firstName" 
-                  value={formData.firstName} 
-                  onChange={handleInputChange} 
-                  className="w-full p-2 border rounded-lg text-gray-500"
-                  required 
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Last Name</label>
-                <input 
-                  type="text" 
-                  name="lastName" 
-                  value={formData.lastName} 
-                  onChange={handleInputChange} 
-                  className="w-full p-2 border rounded-lg text-gray-500"
-                  required 
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Phone Number</label>
-                <input 
-                  type="text" 
-                  name="phoneNumber" 
-                  value={formData.phoneNumber} 
-                  onChange={handleInputChange} 
-                  className="w-full p-2 border rounded-lg text-gray-500"
-                  required 
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Video Link to TikTok</label>
-                <input 
-                  type="text" 
-                  name="videoLink" 
-                  value={formData.videoLink} 
-                  onChange={handleInputChange} 
-                  className="w-full p-2 border rounded-lg text-gray-500"
-                  required 
-                />
-              </div>
-              <div className="flex justify-end">
-                <button 
-                  type="button" 
-                  className="bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded-lg mr-2"
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  Cancel
-                </button>
-                <button 
-                  type="submit" 
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-[95%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
+          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-gray-500">Submit Your Details</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3 sm:mb-4">
+              <label className="block text-gray-700 text-sm sm:text-base mb-1">First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg text-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div className="mb-3 sm:mb-4">
+              <label className="block text-gray-700 text-sm sm:text-base mb-1">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg text-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div className="mb-3 sm:mb-4">
+              <label className="block text-gray-700 text-sm sm:text-base mb-1">Phone Number</label>
+              <input
+                type="text"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg text-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div className="mb-3 sm:mb-4">
+              <label className="block text-gray-700 text-sm sm:text-base mb-1">Video Link to TikTok</label>
+              <input
+                type="text"
+                name="videoLink"
+                value={formData.videoLink}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-lg text-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div className="flex justify-end gap-2">
+              <button
+                type="button"
+                className="bg-gray-300 hover:bg-gray-400 text-black px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
       )}
     </div>
   );
