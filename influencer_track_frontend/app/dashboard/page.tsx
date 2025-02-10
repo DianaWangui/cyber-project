@@ -107,7 +107,7 @@ const Dashboard = () => {
                       >
                         {campaign.status}
                       </span>
-                      <span className="font-medium">Deadline: {campaign.endDate}</span>
+                      <span className="font-medium">Deadline: {new Date(campaign.endDate).toDateString()}</span>
                     </div>
                   </motion.div>
                 </Link>
