@@ -13,7 +13,7 @@ export default function CampaignsPage() {
   useEffect(() => {
     async function fetchCampaigns() {
       try {
-        const response = await fetch("http://localhost:3000/api/my-campaigns");
+        const response = await fetch("https://cyber-project-ten.vercel.app/api/my-campaigns");
         const data = await response.json();
         setCampaigns(data);
       } catch (error) {
