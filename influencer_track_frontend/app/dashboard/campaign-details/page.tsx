@@ -123,7 +123,7 @@ const handleSubmit = async (e) => {
                 <h2 className="text-lg font-semibold text-gray-500">Campaign Details</h2>
                 <div className="flex justify-between items-start">
                   <p className="text-gray-700 mt-2">{selectedCampaign.description}</p>
-                  <p className="mt-2 font-medium text-gray-500 text-right"> Deadline: {selectedCampaign.endDate}</p>
+                  <p className="mt-2 font-medium text-gray-500 text-right"> Deadline: {new Date(campaign.endDate).toDateString()}</p>
                 </div>
               </div>
             </div>
