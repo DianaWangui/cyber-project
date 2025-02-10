@@ -63,7 +63,6 @@ const handleSubmit = async (e) => {
       message: 'Your application has been successfully submitted!'
     });
     
-    // Clear form and close modal after a delay
     setTimeout(() => {
       setIsModalOpen(false);
       setFormData({ firstName: '', lastName: '', phoneNumber: '', videoLink: '' });
@@ -113,7 +112,7 @@ const handleSubmit = async (e) => {
               <h1 className="text-2xl font-bold text-gray-700">{selectedCampaign.name}</h1>
               <p className="text-gray-600">{selectedCampaign.companyName} - {selectedCampaign.location}</p>
               <button 
-                className="bg-orange-400 hover:bg-orange-500 text-black px-4 py-2 rounded-lg mt-2"
+                className="bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-lg mt-2"
                 onClick={() => setIsModalOpen(true)}
               >
                 Submit
@@ -123,7 +122,7 @@ const handleSubmit = async (e) => {
                 <h2 className="text-lg font-semibold text-gray-500">Campaign Details</h2>
                 <div className="flex justify-between items-start">
                   <p className="text-gray-700 mt-2">{selectedCampaign.description}</p>
-                  <p className="mt-2 font-medium text-gray-500 text-right"> Deadline: {new Date(campaign.endDate).toDateString()}</p>
+                  <p className="mt-2 font-medium text-gray-500 text-right"> Deadline: {new Date(selectedCampaign.endDate).toDateString()}</p>
                 </div>
               </div>
             </div>
