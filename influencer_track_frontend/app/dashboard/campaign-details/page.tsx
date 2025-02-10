@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
               <h1 className="text-2xl font-bold text-gray-700">{selectedCampaign.name}</h1>
               <p className="text-gray-600">{selectedCampaign.companyName} - {selectedCampaign.location}</p>
               <button 
-                className="bg-orange-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-lg mt-2"
+                className="bg-orange-400 hover:bg-orange-500 text-black px-4 py-2 rounded-lg mt-2"
                 onClick={() => setIsModalOpen(true)}
               >
                 Submit
