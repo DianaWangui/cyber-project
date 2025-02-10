@@ -110,8 +110,8 @@ const CampaignDetails = () => {
 
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-            <h2 className="text-xl font-semibold mb-4">Submit Your Details</h2>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3 sm:w-1/2 md:w-1/3 lg:w-1/4">
+            <h2 className="text-xl font-semibold mb-4 text-gray-500">Submit Your Details</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block text-gray-700">First Name</label>
