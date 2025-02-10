@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 
 
 const CampaignDetails = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const router = useRouter();
   const [selectedCampaign, setSelectedCampaign] = useState([]);
   const [campaigns, setCampaigns] = useState([]);
@@ -42,20 +44,40 @@ const CampaignDetails = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post('https://cyber-project-ten.vercel.app/api/campaign-application', formData, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
   
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus({ type: '', message: '' });
+
+  try {
+    await axios.post('https://cyber-project-ten.vercel.app/api/campaign-application', formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    setSubmitStatus({
+      type: 'success',
+      message: 'Your application has been successfully submitted!'
+    });
+    
+    // Clear form and close modal after a delay
+    setTimeout(() => {
       setIsModalOpen(false);
-    } catch (error) {
-      console.error('Error saving form data:', error);
-    }
-  };
+      setFormData({ firstName: '', lastName: '', phoneNumber: '', videoLink: '' });
+    }, 2000);
+
+  } catch (error) {
+    setSubmitStatus({
+      type: 'error',
+      message: 'Failed to submit your application. Please try again.'
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="h-screen flex flex-col bg-gray-100">
@@ -112,6 +134,17 @@ const CampaignDetails = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
         <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-[95%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%]">
           <h2 className="text-lg sm:text-xl font-semibold mb-4 text-gray-500">Submit Your Details</h2>
+
+          {submitStatus.type && (
+            <div className={`mb-4 p-3 rounded-lg ${
+              submitStatus.type === 'success' 
+                ? 'bg-green-100 text-green-700 border border-green-200' 
+                : 'bg-red-100 text-red-700 border border-red-200'
+            }`}>
+              {submitStatus.message}
+            </div>
+          )}
+
           <form onSubmit={handleSubmit}>
             <div className="mb-3 sm:mb-4">
               <label className="block text-gray-700 text-sm sm:text-base mb-1">First Name</label>
@@ -162,14 +195,30 @@ const CampaignDetails = () => {
                 type="button"
                 className="bg-gray-300 hover:bg-gray-400 text-black px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base"
                 onClick={() => setIsModalOpen(false)}
+                disabled={isSubmitting}
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base"
+                className={`${
+                  isSubmitting 
+                    ? 'bg-blue-400 cursor-not-allowed' 
+                    : 'bg-blue-500 hover:bg-blue-600'
+                } text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base flex items-center gap-2`}
+                disabled={isSubmitting}
               >
-                Submit
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit'
+                )}
               </button>
             </div>
           </form>
